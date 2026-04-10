@@ -1,19 +1,18 @@
 /**
- * UC1 Display Hello World
- * 
- * This class demonstrates a simple Java application that outputs 
- * the text "Hello World" to the console.
+ * UC3 Display Name or Default
+ * * Accepts a user's name as a command-line argument. 
+ * If no name is provided, defaults to "World".
  *
  * @author Developer
- * @version 1.0
+ * @version 3.0
  */
 public class HelloWorldApp {
-
-    // The main method is the application's entry point
     public static void main(String[] args) {
-        
-        // Output the string literal to the console
-        System.out.println("Hello World");
-        
+        // Check if an argument was provided
+        if (args.length > 0) {
+            System.out.println("Hello, " + args[0] + "!");
+        } else {
+            System.out.println("Hello, World!");
+        }
     }
 }
