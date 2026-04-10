@@ -1,24 +1,17 @@
 /**
- * UC6 Substring Method
- * * Uses an enhanced for loop to concatenate strings and the substring() 
- * method to remove the trailing delimiter.
+ * UC7 String.join Method
+ * * Efficiently concatenates multiple names using the built-in String.join() method.
  *
  * @author Developer
- * @version 6.0
+ * @version 7.0
  */
 public class HelloWorldApp {
     public static void main(String[] args) {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            String combinedNames = "";
-            for (String arg : args) {
-                combinedNames += arg + ", ";
-            }
-            
-            // Remove the final trailing comma and space (last 2 characters)
-            combinedNames = combinedNames.substring(0, combinedNames.length() - 2);
-            
+            // String.join automatically handles the commas perfectly
+            String combinedNames = String.join(", ", args);
             System.out.println("Hello, " + combinedNames + "!");
         }
     }
