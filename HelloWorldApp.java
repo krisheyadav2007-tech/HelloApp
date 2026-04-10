@@ -1,25 +1,25 @@
 /**
- * UC5 Enhanced For Loop
- * * Processes multiple names using an enhanced for loop.
+ * UC6 Substring Method
+ * * Uses an enhanced for loop to concatenate strings and the substring() 
+ * method to remove the trailing delimiter.
  *
  * @author Developer
- * @version 5.0
+ * @version 6.0
  */
 public class HelloWorldApp {
     public static void main(String[] args) {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            System.out.print("Hello, ");
-            boolean isFirst = true;
+            String combinedNames = "";
             for (String arg : args) {
-                if (!isFirst) {
-                    System.out.print(", ");
-                }
-                System.out.print(arg);
-                isFirst = false;
+                combinedNames += arg + ", ";
             }
-            System.out.println("!");
+            
+            // Remove the final trailing comma and space (last 2 characters)
+            combinedNames = combinedNames.substring(0, combinedNames.length() - 2);
+            
+            System.out.println("Hello, " + combinedNames + "!");
         }
     }
 }
