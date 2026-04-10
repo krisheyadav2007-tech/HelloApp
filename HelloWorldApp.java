@@ -1,9 +1,9 @@
 /**
- * UC4 Display Multiple Names
- * * Accepts multiple names and displays a personalized greeting using a standard for loop.
+ * UC5 Enhanced For Loop
+ * * Processes multiple names using an enhanced for loop.
  *
  * @author Developer
- * @version 4.0
+ * @version 5.0
  */
 public class HelloWorldApp {
     public static void main(String[] args) {
@@ -11,12 +11,13 @@ public class HelloWorldApp {
             System.out.println("Hello, World!");
         } else {
             System.out.print("Hello, ");
-            for (int i = 0; i < args.length; i++) {
-                System.out.print(args[i]);
-                // Add a comma and space unless it's the last name
-                if (i < args.length - 1) {
+            boolean isFirst = true;
+            for (String arg : args) {
+                if (!isFirst) {
                     System.out.print(", ");
                 }
+                System.out.print(arg);
+                isFirst = false;
             }
             System.out.println("!");
         }
